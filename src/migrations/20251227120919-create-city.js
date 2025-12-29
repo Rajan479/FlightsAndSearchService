@@ -11,7 +11,8 @@ module.exports = {
       },
       name: {
         type: Sequelize.STRING, 
-        allowNull: false
+        allowNull: false,
+        unique: true
       },
       createdAt: {
         allowNull: false,
@@ -27,3 +28,4 @@ module.exports = {
     await queryInterface.dropTable('Cities');
   }
 };
+// this is the main migration file if we change any property in model file that not reflect after doing migration then write that migration in this migration file then these properties are applied, it is based on tabel - level.
