@@ -10,15 +10,16 @@ class CityService{
             const city = await this.cityRepository.createCity(newCity);
             return city;
         }
-        catch(error){
-            console.log("Something went wrong in the repository layer" + error);
+        catch(error){   
+            console.log("Something went wrong in the repository layer");
+            throw new {error};
         }
     }
     
     async updateCity(cityId, updatedCity){
         try{
             const city = await this.cityRepository.updateCity(cityId, updatedCity);
-
+            return city;
         }
         catch(error){
             console.log("Something went wrong in the repository layer" + error);
@@ -46,6 +47,4 @@ class CityService{
     }
 } 
 
-module.exports = {
-    CityService : CityService
-}
+module.exports = CityService; 

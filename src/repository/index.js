@@ -1,5 +1,3 @@
 const CityRepository = require("./city-repository");
 
-module.exports = {
-    CityRepository : CityRepository
-}
+module.exports = CityRepository;
