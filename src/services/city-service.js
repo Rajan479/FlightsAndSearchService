@@ -22,7 +22,8 @@ class CityService{
             return city;
         }
         catch(error){
-            console.log("Something went wrong in the repository layer" + error);
+            console.log("Something went wrong in the repository layer");
+            throw new {error};
         }
     }
     
@@ -32,7 +33,8 @@ class CityService{
             return response;
         }
         catch(error){
-            console.log("Something went wrong in the repository layer" + error);
+            console.log("Something went wrong in the repository layer");
+            throw new {error};
         }
     }
     
@@ -42,7 +44,19 @@ class CityService{
             return city;
         }
         catch(error){
-            console.log("Something went wrong in the repository layer" + error);
+            console.log("Something went wrong in the repository layer");
+            throw new {error};
+        }
+    }
+
+    async getAllCities(){
+        try{
+            const cities = await this.cityRepository.getAllCities();
+            return cities;
+        }
+        catch(error){
+            console.log("Something went wrong in the repository layer");
+            throw new {error};
         }
     }
 } 
