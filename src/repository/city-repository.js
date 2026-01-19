@@ -16,11 +16,14 @@ const createCity = async function create({ name }){
 
 const updateCity = async function update(cityId, updatedCity){
     try{
-        const city = await City.update(updatedCity, {
+        const updatedCityRow = await City.update(updatedCity, {
             where : {
                 id : cityId
             }
         });
+
+        if(updatedCityRow === 0) return null;
+        const city = await City.findByPk(cityId);
         return city;
     }
     catch(error){
