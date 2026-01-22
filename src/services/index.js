@@ -1,5 +1,4 @@
-const CityService = require("./city-service.js");
-
 module.exports = {
-    CityService : CityService
+    CityService : require('./city-service.js'),
+    FlightService : require('./flight-service.js')
 }
