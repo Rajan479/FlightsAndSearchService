@@ -1,5 +1,4 @@
-const {FlightRepository, AirplaneRepository} = require('../repository/index.js');
-
+const {FlightRepository, AirplaneRepository, AirportRepository} = require('../repository/index.js');
 
 const createFlight = async function create(data){
     try{
